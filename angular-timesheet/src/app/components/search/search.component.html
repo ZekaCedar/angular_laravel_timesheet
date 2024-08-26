@@ -1,0 +1,29 @@
+<div class="grid-container mb-3">
+  <div class="grid-item-1">
+    <div class="form-container">
+      <label for="taskInput" class="form-label me-5 mt-2">Task</label>
+    </div>
+  </div>
+  <div class="grid-item-2">
+    <div class="form-container">
+      <!-- <form class="form-header" onsubmit="return false;" method="get"> -->
+        <div class="d-flex align-items-center mb-3">
+          <input
+            #myInput
+            placeholder="Enter task"
+            type="text"
+            class="form-control"
+            (keyup.enter)="doSearch(myInput.value)"
+          />
+        </div>
+        <div class="d-flex justify-content-center">
+          <button (click)="doSearch(myInput.value)" type="button" class="btn btn-primary me-5">Search</button>
+          <!-- <button type="button" class="btn btn-primary" (click)="openModal()" >Create</button> -->
+          <button type="button" class="btn btn-primary" (click)="openDialog()" >Create</button>
+        </div>
+      <!-- </form> -->
+    </div>
+  </div>
+</div>
+
+<!-- <app-timesheet-modal #modalComponent></app-timesheet-modal> -->

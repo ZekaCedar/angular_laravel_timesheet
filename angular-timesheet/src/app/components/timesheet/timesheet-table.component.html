@@ -1,0 +1,36 @@
+<table *ngIf="timesheet?.length != 0" class="table table-container">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Project Category</th>
+      <th>Task</th>
+      <th>Assigned To</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tempTimesheet of timesheet">
+      <td>{{ tempTimesheet.projectName }}</td>
+      <td>{{ tempTimesheet.category }}</td>
+      <td>{{ tempTimesheet.taskName }}</td>
+      <td>{{ tempTimesheet.assignUser }}</td>
+      <td>{{ tempTimesheet.taskStartDt }}</td>
+      <td>{{ tempTimesheet.taskEndDt }}</td>
+      <td>{{ tempTimesheet.taskStatus }}</td>
+      <td class="align-middle">
+        <img src="assets/images/icon/edit.png" height="25" (click)="editTimesheet(tempTimesheet.id)" />
+      </td>
+      <td class="align-middle">
+        <img src="assets/images/icon/bin.png" height="25" (click)="deleteTimesheet(tempTimesheet.id)"/>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- if products empty then display a message -->
+<div *ngIf="timesheet?.length == 0" class="alert alert-warning" role="alert">
+  No timesheet found.
+</div>

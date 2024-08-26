@@ -1,0 +1,20 @@
+.grid-container {
+  border: 2px solid black; /* Adjust the color and thickness as needed */
+  padding: 20px; /* Optional: Adds some space around the table inside the border */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+}
+
+.grid-item-1 {
+  grid-column: 1; /* Position the item in the middle column */
+  text-align: end;
+}
+
+.grid-item-2 {
+  grid-column: 2; /* Position the item in the middle column */
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between; /* Spreads out the buttons */
+}
